@@ -1,0 +1,16 @@
+services:
+  tensorrt-container:
+    # Mac-friendly override: remove GPU/NVIDIA-specific fields that fail on macOS
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    # avoid setting `container_name` in override to prevent collisions
+    ports:
+      - "6126:6126"
+    volumes:
+      - ../:/workspace:cached
+    shm_size: 16gb
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    command: bash

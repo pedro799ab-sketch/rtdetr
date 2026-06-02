@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  tensorrt-container:
+    # Mac-specific compose: no NVIDIA runtime or deploy resources
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    image: rtdetr-v2:25.06
+    ports:
+      - "6126:6126"
+    volumes:
+      - ../:/workspace:cached
+    shm_size: 16gb
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    command: bash

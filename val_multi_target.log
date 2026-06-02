@@ -1,0 +1,145 @@
+NOTE! Installing ujson may make loading annotations faster.
+
+[INFO] Device: cpu
+[INFO] Number of images: 5
+[ProcessCPUMonitor] TDP/core=15.0W, Cores=10, TDP_total=150.0W
+Loading annotations into memory...
+Done (t=0.00s)
+Creating index...
+index created!
+[INFO] Loaded 5 images in 1 batches (batch_size=5)
+[INFO] K values to test: [5, 10, 15, 20, 25, 30, 40, 50, 100, 200, 300, 500, 1000, 1500]
+[INFO] CALIBRATION MODE: Target times = [1.0, 2.0, 3.0]s, Tolerance = ±10%
+
+================================================================================
+CALIBRATED POWER MEASUREMENT: Target Time = 1.0s
+================================================================================
+
+
+[Calibrating threads for target time 1.0s]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 10 threads...]
+    Encoder: Time=2.2806s, Power=74.91W
+    [Processing 14 K values with calibration...]
+
+    K=5:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5377s (error: 46.2%)
+        Iteration 2: 2 threads → 0.5749s (error: 42.5%)
+        Iteration 3: 1 threads → 1.0836s (error: 8.4%)
+        ✓ Calibrated: 1 threads achieve 1.0836s (within ±10%)
+      K=   5: Power=14.99W, Time=1.0804s (target=1.00s, error=8.0%), CPU=10.0%, 1/10 threads
+
+    K=10:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5379s (error: 46.2%)
+        Iteration 2: 2 threads → 0.5783s (error: 42.2%)
+        Iteration 3: 1 threads → 1.0832s (error: 8.3%)
+        ✓ Calibrated: 1 threads achieve 1.0832s (within ±10%)
+
+    K=15:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5350s (error: 46.5%)
+        Iteration 2: 2 threads → 0.5791s (error: 42.1%)
+        Iteration 3: 1 threads → 1.0834s (error: 8.3%)
+        ✓ Calibrated: 1 threads achieve 1.0834s (within ±10%)
+
+    K=20:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5385s (error: 46.1%)
+        Iteration 2: 2 threads → 0.5781s (error: 42.2%)
+        Iteration 3: 1 threads → 1.0821s (error: 8.2%)
+        ✓ Calibrated: 1 threads achieve 1.0821s (within ±10%)
+
+    K=25:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5414s (error: 45.9%)
+        Iteration 2: 2 threads → 0.5772s (error: 42.3%)
+        Iteration 3: 1 threads → 1.0845s (error: 8.4%)
+        ✓ Calibrated: 1 threads achieve 1.0845s (within ±10%)
+
+    K=30:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5398s (error: 46.0%)
+        Iteration 2: 2 threads → 0.6017s (error: 39.8%)
+        Iteration 3: 1 threads → 1.0809s (error: 8.1%)
+        ✓ Calibrated: 1 threads achieve 1.0809s (within ±10%)
+
+    K=40:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5394s (error: 46.1%)
+        Iteration 2: 2 threads → 0.5793s (error: 42.1%)
+        Iteration 3: 1 threads → 1.0825s (error: 8.3%)
+        ✓ Calibrated: 1 threads achieve 1.0825s (within ±10%)
+
+    K=50:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5481s (error: 45.2%)
+        Iteration 2: 2 threads → 0.5809s (error: 41.9%)
+        Iteration 3: 1 threads → 1.1238s (error: 12.4%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.1238s (error: 12.4%)
+
+    K=100:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5348s (error: 46.5%)
+        Iteration 2: 2 threads → 0.5873s (error: 41.3%)
+        Iteration 3: 1 threads → 1.0888s (error: 8.9%)
+        ✓ Calibrated: 1 threads achieve 1.0888s (within ±10%)
+      K= 100: Power=15.05W, Time=1.0864s (target=1.00s, error=8.6%), CPU=10.0%, 1/10 threads
+
+    K=200:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5420s (error: 45.8%)
+        Iteration 2: 2 threads → 0.5830s (error: 41.7%)
+        Iteration 3: 1 threads → 1.0982s (error: 9.8%)
+        ✓ Calibrated: 1 threads achieve 1.0982s (within ±10%)
+      K= 200: Power=15.12W, Time=1.0813s (target=1.00s, error=8.1%), CPU=10.1%, 1/10 threads
+
+    K=300:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5317s (error: 46.8%)
+        Iteration 2: 2 threads → 0.5774s (error: 42.3%)
+        Iteration 3: 1 threads → 1.0871s (error: 8.7%)
+        ✓ Calibrated: 1 threads achieve 1.0871s (within ±10%)
+      K= 300: Power=15.09W, Time=1.0933s (target=1.00s, error=9.3%), CPU=10.1%, 1/10 threads
+
+    K=500:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5443s (error: 45.6%)
+        Iteration 2: 2 threads → 0.5810s (error: 41.9%)
+        Iteration 3: 1 threads → 1.0880s (error: 8.8%)
+        ✓ Calibrated: 1 threads achieve 1.0880s (within ±10%)
+      K= 500: Power=14.93W, Time=1.0851s (target=1.00s, error=8.5%), CPU=10.0%, 1/10 threads
+
+    K=1000:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5400s (error: 46.0%)
+        Iteration 2: 2 threads → 0.5814s (error: 41.9%)
+        Iteration 3: 1 threads → 1.0870s (error: 8.7%)
+        ✓ Calibrated: 1 threads achieve 1.0870s (within ±10%)
+      K=1000: Power=14.93W, Time=1.0853s (target=1.00s, error=8.5%), CPU=10.0%, 1/10 threads
+
+    K=1500:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.5445s (error: 45.5%)
+        Iteration 2: 2 threads → 0.5777s (error: 42.2%)
+        Iteration 3: 1 threads → 1.0917s (error: 9.2%)
+        ✓ Calibrated: 1 threads achieve 1.0917s (within ±10%)
+      K=1500: Power=15.11W, Time=1.0821s (target=1.00s, error=8.2%), CPU=10.1%, 1/10 threads
+
+    [Calculating mAP across all K values...]
+Traceback (most recent call last):
+  File "/workspaces/rtdert_container/tools/Val.py", line 811, in <module>
+    main(args)
+  File "/workspaces/rtdert_container/tools/Val.py", line 565, in main
+    results = run_experiment_for_config(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/rtdert_container/tools/Val.py", line 486, in run_experiment_for_config
+    map_metrics = calculate_map(coco_gt, result["predictions"], image_ids)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/rtdert_container/tools/Val.py", line 297, in calculate_map
+    for box, score, label in zip(boxes, scores, labels):
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not iterable

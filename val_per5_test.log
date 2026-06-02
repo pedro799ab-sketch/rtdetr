@@ -1,0 +1,275 @@
+NOTE! Installing ujson may make loading annotations faster.
+
+[INFO] Device: cpu
+[INFO] Number of images: 20
+[ProcessCPUMonitor] TDP/core=15.0W, Cores=10, TDP_total=150.0W
+[INFO] Using 1 threads
+Loading annotations into memory...
+Done (t=0.00s)
+Creating index...
+index created!
+[INFO] Loaded 10 images
+[INFO] K values to test: [5, 10, 15, 20, 25, 30, 40, 50, 100, 200, 300, 500, 1000, 1500]
+[INFO] Processing images in groups of 5
+
+================================================================================
+K=5
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 7.8467s | Power: 14.99W | Energy: 117.60J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 7.5256s | Power: 15.03W | Energy: 113.10J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=5 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 15.01W
+    Avg Energy: 115.35J
+    Avg Time: 7.6861s
+================================================================================
+K=10
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 7.6914s | Power: 15.00W | Energy: 115.35J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 7.6086s | Power: 15.00W | Energy: 114.15J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=10 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 15.00W
+    Avg Energy: 114.75J
+    Avg Time: 7.6500s
+================================================================================
+K=15
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 7.5576s | Power: 15.02W | Energy: 113.55J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 7.5651s | Power: 15.01W | Energy: 113.55J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=15 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 15.02W
+    Avg Energy: 113.55J
+    Avg Time: 7.5613s
+================================================================================
+K=20
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 7.6079s | Power: 14.98W | Energy: 114.00J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 7.6290s | Power: 15.00W | Energy: 114.45J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=20 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 14.99W
+    Avg Energy: 114.23J
+    Avg Time: 7.6185s
+================================================================================
+K=25
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 7.5763s | Power: 15.01W | Energy: 113.70J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 7.5869s | Power: 15.01W | Energy: 113.85J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=25 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 15.01W
+    Avg Energy: 113.78J
+    Avg Time: 7.5816s
+================================================================================
+K=30
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 7.5643s | Power: 15.01W | Energy: 113.55J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 7.5687s | Power: 15.00W | Energy: 113.55J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=30 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 15.01W
+    Avg Energy: 113.55J
+    Avg Time: 7.5665s
+================================================================================
+K=40
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 7.7283s | Power: 14.98W | Energy: 115.80J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 7.5947s | Power: 15.01W | Energy: 114.00J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=40 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 15.00W
+    Avg Energy: 114.90J
+    Avg Time: 7.6615s
+================================================================================
+K=50
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 7.5911s | Power: 14.98W | Energy: 113.70J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 7.5887s | Power: 15.02W | Energy: 114.00J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=50 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 15.00W
+    Avg Energy: 113.85J
+    Avg Time: 7.5899s
+================================================================================
+K=100
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 7.7240s | Power: 15.01W | Energy: 115.95J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 7.9427s | Power: 14.99W | Energy: 119.10J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=100 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 15.00W
+    Avg Energy: 117.52J
+    Avg Time: 7.8334s
+================================================================================
+K=200
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 7.8256s | Power: 14.99W | Energy: 117.30J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 7.8304s | Power: 14.98W | Energy: 117.30J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=200 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 14.98W
+    Avg Energy: 117.30J
+    Avg Time: 7.8280s
+================================================================================
+K=300
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 8.0406s | Power: 15.00W | Energy: 120.60J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 8.0070s | Power: 14.99W | Energy: 120.00J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=300 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 14.99W
+    Avg Energy: 120.30J
+    Avg Time: 8.0238s
+================================================================================
+K=500
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 8.4214s | Power: 15.02W | Energy: 126.45J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 8.3827s | Power: 15.01W | Energy: 125.85J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=500 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 15.01W
+    Avg Energy: 126.15J
+    Avg Time: 8.4021s
+================================================================================
+K=1000
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 9.6540s | Power: 14.99W | Energy: 144.75J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 9.6356s | Power: 15.01W | Energy: 144.60J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=1000 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 15.00W
+    Avg Energy: 144.68J
+    Avg Time: 9.6448s
+================================================================================
+K=1500
+================================================================================
+Load PResNet50 state_dict
+
+  Group 1/2 (Images 1-5):
+    Time: 11.3064s | Power: 14.99W | Energy: 169.50J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  Group 2/2 (Images 6-10):
+    Time: 11.2776s | Power: 14.99W | Energy: 169.05J
+    mAP: 0.0000 | mAP@50: 0.0000 | CPU: 10.0%
+
+  K=1500 Summary:
+    Avg mAP: 0.0000
+    Avg Power: 14.99W
+    Avg Energy: 169.27J
+    Avg Time: 11.2920s
+
+[INFO] Results saved to: power_map_per5images.csv
+[INFO] Generating visualization...
+[INFO] Plot saved to: power_map_per5images.png
+
+================================================================================
+COMPLETE!
+================================================================================
+

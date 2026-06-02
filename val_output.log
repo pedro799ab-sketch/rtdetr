@@ -1,0 +1,412 @@
+NOTE! Installing ujson may make loading annotations faster.
+
+[INFO] Device: cpu
+[INFO] Number of images: 5
+[ProcessCPUMonitor] TDP/core=15.0W, Cores=10, TDP_total=150.0W
+Loading annotations into memory...
+Done (t=0.00s)
+Creating index...
+index created!
+[INFO] Loaded 5 images in 1 batches (batch_size=5)
+[INFO] K values to test: [5, 10, 15, 20, 25, 30, 40, 50, 100, 200, 300, 500, 1000, 1500]
+[INFO] CALIBRATION MODE: Target times = [1.0, 2.0, 3.0]s, Tolerance = ±10%
+
+================================================================================
+CALIBRATED POWER MEASUREMENT: Target Time = 1.0s
+================================================================================
+
+
+[Calibrating threads for target time 1.0s]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 10 threads...]
+    Encoder: Time=6.9746s, Power=40.82W
+    [Processing 14 K values with calibration...]
+
+    K=5:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 2.2320s (error: 123.2%)
+        Iteration 2: 3 threads → 1.4932s (error: 49.3%)
+        → Converged at 3 threads
+        → Using best: 3 threads → 1.4932s (error: 49.3%)
+      K=   5: Power=42.80W, Time=1.1847s (target=1.00s, error=18.5%), CPU=28.5%, 3/10 threads
+
+    K=10:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 1.4962s (error: 49.6%)
+        Iteration 2: 4 threads → 1.2683s (error: 26.8%)
+        → Converged at 4 threads
+        → Using best: 4 threads → 1.2683s (error: 26.8%)
+
+    K=15:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 1.9815s (error: 98.1%)
+        Iteration 2: 3 threads → 1.5167s (error: 51.7%)
+        Iteration 3: 2 threads → 1.7032s (error: 70.3%)
+        → Converged at 2 threads
+        → Using best: 3 threads → 1.5167s (error: 51.7%)
+
+    K=20:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 2.1307s (error: 113.1%)
+        Iteration 2: 3 threads → 1.8426s (error: 84.3%)
+        Iteration 3: 2 threads → 1.7018s (error: 70.2%)
+        → Converged at 2 threads
+        → Using best: 2 threads → 1.7018s (error: 70.2%)
+
+    K=25:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 1.9824s (error: 98.2%)
+        Iteration 2: 3 threads → 1.3092s (error: 30.9%)
+        → Converged at 3 threads
+        → Using best: 3 threads → 1.3092s (error: 30.9%)
+
+    K=30:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 1.2370s (error: 23.7%)
+        → Converged at 5 threads
+        → Using best: 5 threads → 1.2370s (error: 23.7%)
+
+    K=40:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 1.8940s (error: 89.4%)
+        Iteration 2: 3 threads → 1.8507s (error: 85.1%)
+        Iteration 3: 2 threads → 1.5177s (error: 51.8%)
+        → Converged at 2 threads
+        → Using best: 2 threads → 1.5177s (error: 51.8%)
+
+    K=50:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 1.7733s (error: 77.3%)
+        Iteration 2: 3 threads → 1.3824s (error: 38.2%)
+        → Converged at 3 threads
+        → Using best: 3 threads → 1.3824s (error: 38.2%)
+
+    K=100:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 2.7379s (error: 173.8%)
+        Iteration 2: 2 threads → 1.5357s (error: 53.6%)
+        → Converged at 2 threads
+        → Using best: 2 threads → 1.5357s (error: 53.6%)
+      K= 100: Power=27.80W, Time=1.6185s (target=1.00s, error=61.9%), CPU=18.5%, 2/10 threads
+
+    K=200:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 1.5375s (error: 53.7%)
+        Iteration 2: 4 threads → 1.3491s (error: 34.9%)
+        Iteration 3: 3 threads → 1.2477s (error: 24.8%)
+        → Converged at 3 threads
+        → Using best: 3 threads → 1.2477s (error: 24.8%)
+      K= 200: Power=43.65W, Time=0.9726s (target=1.00s, error=2.7%), CPU=29.1%, 3/10 threads
+
+    K=300:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.6936s (error: 30.6%)
+        Iteration 2: 3 threads → 1.0631s (error: 6.3%)
+        ✓ Calibrated: 3 threads achieve 1.0631s (within ±10%)
+      K= 300: Power=43.71W, Time=0.9609s (target=1.00s, error=3.9%), CPU=29.1%, 3/10 threads
+
+    K=500:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.7009s (error: 29.9%)
+        Iteration 2: 3 threads → 1.3045s (error: 30.4%)
+        → Converged at 3 threads
+        → Using best: 5 threads → 0.7009s (error: 29.9%)
+      K= 500: Power=69.36W, Time=0.8499s (target=1.00s, error=15.0%), CPU=46.2%, 5/10 threads
+
+    K=1000:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.9220s (error: 7.8%)
+        ✓ Calibrated: 5 threads achieve 0.9220s (within ±10%)
+      K=1000: Power=72.66W, Time=0.7060s (target=1.00s, error=29.4%), CPU=48.4%, 5/10 threads
+
+    K=1500:
+      [Calibrating for target time 1.00s...]
+        Iteration 1: 5 threads → 0.7116s (error: 28.8%)
+        Iteration 2: 3 threads → 0.9880s (error: 1.2%)
+        ✓ Calibrated: 3 threads achieve 0.9880s (within ±10%)
+      K=1500: Power=43.42W, Time=1.0261s (target=1.00s, error=2.6%), CPU=28.9%, 3/10 threads
+
+  [Summary for 10 threads, target=1.0s]
+    Average Decoder Power: 43.72W
+    Average Decoder Time:  1.2794s
+    Average CPU Utilization: 29.1%
+    Total Energy:  4695.15J
+    Total Time:    115.56s
+
+================================================================================
+CALIBRATED POWER MEASUREMENT: Target Time = 2.0s
+================================================================================
+
+
+[Calibrating threads for target time 2.0s]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 10 threads...]
+    Encoder: Time=6.9174s, Power=44.67W
+    [Processing 14 K values with calibration...]
+
+    K=5:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 1.5251s (error: 23.7%)
+        Iteration 2: 3 threads → 1.3456s (error: 32.7%)
+        Iteration 3: 2 threads → 1.3892s (error: 30.5%)
+        Iteration 4: 1 threads → 1.8324s (error: 8.4%)
+        ✓ Calibrated: 1 threads achieve 1.8324s (within ±10%)
+      K=   5: Power=15.01W, Time=1.8184s (target=2.00s, error=9.1%), CPU=10.0%, 1/10 threads
+
+    K=10:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 0.6750s (error: 66.3%)
+        Iteration 2: 1 threads → 1.4886s (error: 25.6%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.4886s (error: 25.6%)
+
+    K=15:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 0.7059s (error: 64.7%)
+        Iteration 2: 1 threads → 1.6214s (error: 18.9%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.6214s (error: 18.9%)
+
+    K=20:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 0.6871s (error: 65.6%)
+        Iteration 2: 1 threads → 1.5922s (error: 20.4%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.5922s (error: 20.4%)
+
+    K=25:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 0.7086s (error: 64.6%)
+        Iteration 2: 1 threads → 1.6964s (error: 15.2%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.6964s (error: 15.2%)
+
+    K=30:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 0.7120s (error: 64.4%)
+        Iteration 2: 1 threads → 1.6149s (error: 19.3%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.6149s (error: 19.3%)
+
+    K=40:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 0.7171s (error: 64.1%)
+        Iteration 2: 1 threads → 1.6209s (error: 19.0%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.6209s (error: 19.0%)
+
+    K=50:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 0.6826s (error: 65.9%)
+        Iteration 2: 1 threads → 1.3197s (error: 34.0%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.3197s (error: 34.0%)
+
+    K=100:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 0.8916s (error: 55.4%)
+        Iteration 2: 2 threads → 1.2113s (error: 39.4%)
+        Iteration 3: 1 threads → 2.0788s (error: 3.9%)
+        ✓ Calibrated: 1 threads achieve 2.0788s (within ±10%)
+      K= 100: Power=14.94W, Time=2.0677s (target=2.00s, error=3.4%), CPU=10.0%, 1/10 threads
+
+    K=200:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 0.9549s (error: 52.3%)
+        Iteration 2: 2 threads → 1.2186s (error: 39.1%)
+        Iteration 3: 1 threads → 1.2294s (error: 38.5%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.2294s (error: 38.5%)
+      K= 200: Power=15.02W, Time=1.3086s (target=2.00s, error=34.6%), CPU=10.0%, 1/10 threads
+
+    K=300:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 0.7868s (error: 60.7%)
+        Iteration 2: 1 threads → 1.2369s (error: 38.2%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.2369s (error: 38.2%)
+      K= 300: Power=15.08W, Time=1.3029s (target=2.00s, error=34.9%), CPU=10.1%, 1/10 threads
+
+    K=500:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 0.7539s (error: 62.3%)
+        Iteration 2: 1 threads → 1.2256s (error: 38.7%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.2256s (error: 38.7%)
+      K= 500: Power=15.07W, Time=1.2638s (target=2.00s, error=36.8%), CPU=10.0%, 1/10 threads
+
+    K=1000:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 0.7476s (error: 62.6%)
+        Iteration 2: 1 threads → 1.3124s (error: 34.4%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.3124s (error: 34.4%)
+      K=1000: Power=14.94W, Time=1.2951s (target=2.00s, error=35.2%), CPU=10.0%, 1/10 threads
+
+    K=1500:
+      [Calibrating for target time 2.00s...]
+        Iteration 1: 5 threads → 0.8163s (error: 59.2%)
+        Iteration 2: 2 threads → 0.7968s (error: 60.2%)
+        Iteration 3: 1 threads → 1.2188s (error: 39.1%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.2188s (error: 39.1%)
+      K=1500: Power=14.97W, Time=1.7837s (target=2.00s, error=10.8%), CPU=10.0%, 1/10 threads
+
+  [Summary for 10 threads, target=2.0s]
+    Average Decoder Power: 15.00W
+    Average Decoder Time:  1.6866s
+    Average CPU Utilization: 10.0%
+    Total Energy:  4680.15J
+    Total Time:    120.46s
+
+================================================================================
+CALIBRATED POWER MEASUREMENT: Target Time = 3.0s
+================================================================================
+
+
+[Calibrating threads for target time 3.0s]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 10 threads...]
+    Encoder: Time=3.8812s, Power=74.98W
+    [Processing 14 K values with calibration...]
+
+    K=5:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.6678s (error: 77.7%)
+        Iteration 2: 1 threads → 1.6845s (error: 43.8%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.6845s (error: 43.8%)
+      K=   5: Power=14.95W, Time=1.2643s (target=3.00s, error=57.9%), CPU=10.0%, 1/10 threads
+
+    K=10:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.7084s (error: 76.4%)
+        Iteration 2: 1 threads → 1.8080s (error: 39.7%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.8080s (error: 39.7%)
+
+    K=15:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.6129s (error: 79.6%)
+        Iteration 2: 1 threads → 1.8604s (error: 38.0%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.8604s (error: 38.0%)
+
+    K=20:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.6149s (error: 79.5%)
+        Iteration 2: 1 threads → 1.8629s (error: 37.9%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.8629s (error: 37.9%)
+
+    K=25:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.6346s (error: 78.8%)
+        Iteration 2: 1 threads → 1.7248s (error: 42.5%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.7248s (error: 42.5%)
+
+    K=30:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.6724s (error: 77.6%)
+        Iteration 2: 1 threads → 1.7327s (error: 42.2%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.7327s (error: 42.2%)
+
+    K=40:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.6325s (error: 78.9%)
+        Iteration 2: 1 threads → 1.7027s (error: 43.2%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.7027s (error: 43.2%)
+
+    K=50:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.6882s (error: 77.1%)
+        Iteration 2: 1 threads → 1.3268s (error: 55.8%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.3268s (error: 55.8%)
+
+    K=100:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.5558s (error: 81.5%)
+        Iteration 2: 1 threads → 1.0859s (error: 63.8%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.0859s (error: 63.8%)
+      K= 100: Power=14.97W, Time=1.0821s (target=3.00s, error=63.9%), CPU=10.0%, 1/10 threads
+
+    K=200:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.5422s (error: 81.9%)
+        Iteration 2: 1 threads → 1.0886s (error: 63.7%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.0886s (error: 63.7%)
+      K= 200: Power=14.99W, Time=1.0804s (target=3.00s, error=64.0%), CPU=10.0%, 1/10 threads
+
+    K=300:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.5512s (error: 81.6%)
+        Iteration 2: 1 threads → 1.1131s (error: 62.9%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.1131s (error: 62.9%)
+      K= 300: Power=15.02W, Time=1.0788s (target=3.00s, error=64.0%), CPU=10.0%, 1/10 threads
+
+    K=500:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.5603s (error: 81.3%)
+        Iteration 2: 1 threads → 1.0945s (error: 63.5%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.0945s (error: 63.5%)
+      K= 500: Power=14.97W, Time=1.0924s (target=3.00s, error=63.6%), CPU=10.0%, 1/10 threads
+
+    K=1000:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.5397s (error: 82.0%)
+        Iteration 2: 1 threads → 1.0756s (error: 64.1%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.0756s (error: 64.1%)
+      K=1000: Power=14.87W, Time=1.0791s (target=3.00s, error=64.0%), CPU=9.9%, 1/10 threads
+
+    K=1500:
+      [Calibrating for target time 3.00s...]
+        Iteration 1: 5 threads → 0.5335s (error: 82.2%)
+        Iteration 2: 1 threads → 1.0805s (error: 64.0%)
+        → Converged at 1 threads
+        → Using best: 1 threads → 1.0805s (error: 64.0%)
+      K=1500: Power=15.00W, Time=1.1001s (target=3.00s, error=63.3%), CPU=10.0%, 1/10 threads
+
+  [Summary for 10 threads, target=3.0s]
+    Average Decoder Power: 14.98W
+    Average Decoder Time:  1.1941s
+    Average CPU Utilization: 10.0%
+    Total Energy:  4324.35J
+    Total Time:    71.05s
+
+================================================================================
+OPTIMIZATION RESULTS
+================================================================================
+
+ Target Time |  Threads | Avg Dec Power (W) | Avg Dec Time (s) |  Avg CPU % |  Mean Time Err % |  Within Tol %
+-------------------------------------------------------------------------------------------------------------------
+         3.0 |       10 |             14.98 |           1.1941 |       10.0 |             60.2 |           0.0
+         2.0 |       10 |             15.00 |           1.6866 |       10.0 |             16.5 |          50.0
+         1.0 |       10 |             43.72 |           1.2794 |       29.1 |             37.7 |          28.6
+
+[OPTIMAL] 10 threads → Avg Decoder Power: 14.98W, Avg CPU: 10.0%
+          Mean Time Error: 60.2%, Within Tolerance: 0.0%
+
+[INFO] Detailed results saved to: power_minimization_results.csv
+[INFO] Summary saved to: power_minimization_summary.csv
+
+[INFO] Generating visualizations...
+[INFO] Visualization saved to: power_minimization_target_1.0s.png
+[INFO] Visualization saved to: power_minimization_target_2.0s.png
+[INFO] Visualization saved to: power_minimization_target_3.0s.png
+
+================================================================================
+COMPLETE! Check generated plots and CSV files.
+================================================================================
+

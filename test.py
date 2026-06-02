@@ -1,0 +1,2 @@
+# This is a script the you should write in order to test the model under different condition
+# The baseline is to use the ./tools/train.py script with the difference that we don't need the overhead of the training part

@@ -1,0 +1,63 @@
+nohup: ignoring input
+Starting analysis for 1000 images...
+================================
+Processing K=5...
+================================
+✓ K=5 completed successfully
+================================
+Processing K=10...
+================================
+✓ K=10 completed successfully
+================================
+Processing K=15...
+================================
+✓ K=15 completed successfully
+================================
+Processing K=20...
+================================
+✓ K=20 completed successfully
+================================
+Processing K=25...
+================================
+✓ K=25 completed successfully
+================================
+Processing K=30...
+================================
+✓ K=30 completed successfully
+================================
+Processing K=40...
+================================
+✓ K=40 completed successfully
+================================
+Processing K=50...
+================================
+✓ K=50 completed successfully
+================================
+Processing K=100...
+================================
+✓ K=100 completed successfully
+================================
+Processing K=200...
+================================
+✓ K=200 completed successfully
+================================
+Processing K=300...
+================================
+✓ K=300 completed successfully
+================================
+Processing K=500...
+================================
+✓ K=500 completed successfully
+================================
+Processing K=1000...
+================================
+✓ K=1000 completed successfully
+================================
+Processing K=1500...
+================================
+✓ K=1500 completed successfully
+
+================================
+Analysis complete!
+Results saved to: power_map_1000images_results.csv
+================================
