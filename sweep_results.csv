@@ -1,0 +1,1 @@
+num_queries (k),mAP@IoU=0.5:0.95 (decoder),num_queries_enc (k),mAP@IoU=0.5:0.95 (encoder),time_decoder,time_encoder,time_total
