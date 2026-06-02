@@ -40,42 +40,22 @@ ENV/
 Thumbs.db
 
 # ============================================================
-# Project specific - large / regeneratable assets
+# Large binary artifacts — exceed GitHub's 100 MB file limit
 # ============================================================
-
-# Datasets (download separately, see README)
-dataset/coco/
-dataset/**/images/
-dataset/**/annotations/
-dataset/**/*.zip
-dataset/**/*.tar*
-
-# Trained / pretrained model weights
+# Model checkpoints (download from upstream RT-DETR releases,
+# or store via Git LFS if you really want them in-repo).
 *.pth
 *.pt
 *.onnx
 *.engine
 *.trt
-*.bin
 *.safetensors
 
-# Outputs / experiment artifacts
-output/
-runs/
-logs/
-wandb/
-mlruns/
+# ============================================================
+# Full COCO 2017 dataset (~20 GB) — publicly available,
+# download separately. Keep the small sample images though.
+# ============================================================
+dataset/coco/
 
-# Generated plots (keep a few in docs/ if you want to showcase)
-# *.png
-# *.jpg
-
-# Large CSVs from sweeps (keep summary CSVs)
-power_map_1000images_results.csv
-sweep_results.csv
-
-# Misc
+# Misc one-off / personal files
 valentine_game.html
-docker_debug.sh
-lunch_model.sh
-monitor_progress.sh
