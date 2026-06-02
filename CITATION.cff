@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+title: "RT-DETR Power, Energy & mAP Analysis"
+message: "If you use this software in your research, please cite it as below."
+type: software
+authors:
+  - family-names: Badr
+    given-names: Ahmed
+repository-code: "https://github.com/pedro799ab-sketch/rtdetr"
+license: MIT
+keywords:
+  - object-detection
+  - rt-detr
+  - power-analysis
+  - energy-efficient-ml
+  - pytorch
+  - computer-vision
+references:
+  - type: article
+    title: "DETRs Beat YOLOs on Real-time Object Detection"
+    authors:
+      - family-names: Zhao
+        given-names: Yian
+      - family-names: Lv
+        given-names: Wenyu
+    year: 2024
+    url: "https://arxiv.org/abs/2304.08069"
