@@ -1,40 +1,181 @@
-# ⚡ RT-DETR Power, Energy & Accuracy Analysis
+<div align="center">
 
-> Research-grade experimental framework for studying the **power / energy / latency / mAP trade-offs** of the [RT-DETR](https://github.com/lyuwenyu/RT-DETR) real-time object detector on CPU.
+# ⚡ RT-DETR · Power, Energy & Accuracy Analysis
 
-This repository contains my custom experimental pipeline built on top of RT-DETR / RT-DETRv2 to answer one core question:
+**A research-grade experimental framework that measures the *power*, *energy*, *latency*
+and *mAP* trade-offs of the [RT-DETR](https://github.com/lyuwenyu/RT-DETR) real-time object detector on CPU.**
 
-> **How does the number of decoder queries `K` and the available compute budget affect *power*, *energy*, *latency* and *detection accuracy (mAP)* on a real CPU?**
+[![CI](https://github.com/pedro799ab-sketch/rtdetr/actions/workflows/ci.yml/badge.svg)](https://github.com/pedro799ab-sketch/rtdetr/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-EE4C2C.svg?logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![Built on RT-DETR](https://img.shields.io/badge/Built%20on-RT--DETR%2Fv2-success)](https://github.com/lyuwenyu/RT-DETR)
+[![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)](./Dockerfile)
+[![PRs welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
 
-The work covers calibrated time-budget execution, per-K power sweeps, CPU-thread sweeps, energy bookkeeping, COCO mAP evaluation on subsets, and reproducible plotting.
-
----
-
-## 🧠 What's interesting here
-
-- 📊 **End-to-end measurement pipeline** — runs RT-DETR inference on COCO val while logging wall time, CPU time, utilization, estimated power and energy.
-- 🎚️ **Decoder-query (`K`) sweeps** — measures how detection quality (mAP / AP50 / AP75) and cost scale with the number of object queries.
-- ⏱️ **Time-budget calibration** — automatically adapts the number of threads to hit target inference times (1s, 2s, 3s, 4s, 5s) and re-measures power / mAP at each operating point.
-- 🔋 **Power minimization sweeps** — searches the `(K, num_threads)` space to find Pareto-optimal *low-power-but-still-accurate* configurations.
-- 🐳 **Containerized** — ships with a `Dockerfile` + `docker-compose.yml` for reproducible runs.
-- 📈 **Plot generators** — every analysis has a matching script that produces publication-style figures.
-
-> 🔬 Built and validated on **Apple Silicon (MPS)** and standard x86 CPUs.
+</div>
 
 ---
 
-## 🖼️ Example results
+## 🎯 The question this repo answers
 
-| Analysis | Description |
-|---|---|
-| `power_K.csv`, `energy_K.csv` | Power & energy as a function of `K` |
-| `power_K_time{1..5}s.csv` | Power vs `K` under fixed time budgets |
-| `val_results_t{1..5}s.csv` | mAP / AP50 / AP75 under fixed time budgets |
-| `min_power_map_results_5images.csv` | Minimum-power configuration per `K` |
-| `optimal_cpu_results_5images.csv` | Optimal CPU-thread count per `K` |
-| `power_map_1000images_summary.csv` | Large-scale (1000 images) `K` sweep |
+> **How does the number of decoder queries `K` and the available compute budget affect
+> *power*, *energy*, *latency* and *detection accuracy* on a real CPU?**
 
-See [`ANALYSIS_SUMMARY.md`](./ANALYSIS_SUMMARY.md), [`POWER_ANALYSIS_SUMMARY.md`](./POWER_ANALYSIS_SUMMARY.md), [`POWER_MEASUREMENT_REFERENCE.md`](./POWER_MEASUREMENT_REFERENCE.md) and [`VISUALIZATION_GUIDE.md`](./VISUALIZATION_GUIDE.md) for a full write-up of the methodology and findings.
+The pipeline runs RT-DETR / RT-DETRv2 on COCO, sweeps `K` and CPU thread count, calibrates
+to fixed time budgets (1 s → 5 s), logs power/energy from CPU utilization, computes mAP /
+AP50 / AP75, and produces publication-style figures.
+
+---
+
+## ✨ Highlights
+
+- 📊 **End-to-end measurement pipeline** — wall time, CPU time, utilization, power (W), energy (J), mAP, AP50, AP75 — all in one CSV.
+- 🎚️ **Decoder-query (`K`) sweeps** — see how detection quality and cost scale with the number of object queries.
+- ⏱️ **Time-budget calibration** — automatically adapts thread count to hit 1 s / 2 s / 3 s / 4 s / 5 s targets.
+- 🔋 **Power minimization** — Pareto search over `(K, num_threads)` to find low-power configs that still hit a target mAP.
+- 🧪 **Large-scale validation** — full 1000-image COCO sweep included (`power_map_1000images_*.csv`).
+- 🐳 **Containerized** — `Dockerfile` + `docker-compose.yml` for reproducible runs.
+- 🖼️ **Plot generators** — every analysis has a matching script that produces a PNG.
+- 🍏 **Apple Silicon ready** — validated on `mps`, also runs on `cuda` and `cpu`.
+
+---
+
+## 🖼️ Results gallery
+
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <img src="./summary_ap_power_vs_k.png" width="100%"/><br/>
+      <sub><b>AP & Power vs K</b><br/>summary view</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="./power_vs_K_different_times.png" width="100%"/><br/>
+      <sub><b>Power vs K</b><br/>under 1-5 s time budgets</sub>
+    </td>
+    <td align="center" width="33%">
+      <img src="./mean_energy_vs_k_t1-5.png" width="100%"/><br/>
+      <sub><b>Energy vs K</b><br/>per time budget</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="./power_heatmap_time_vs_K.png" width="100%"/><br/>
+      <sub><b>Power heatmap</b><br/>(time, K) plane</sub>
+    </td>
+    <td align="center">
+      <img src="./power_minimization_optimal.png" width="100%"/><br/>
+      <sub><b>Pareto frontier</b><br/>min-power config per K</sub>
+    </td>
+    <td align="center">
+      <img src="./power_mAP_analysis_estimated.png" width="100%"/><br/>
+      <sub><b>Power · mAP · Energy</b><br/>combined analysis</sub>
+    </td>
+  </tr>
+</table>
+
+📂 Full set of figures (~40 PNGs) is in the repo root. Methodology write-ups:
+[`ANALYSIS_SUMMARY.md`](./ANALYSIS_SUMMARY.md) · [`POWER_ANALYSIS_SUMMARY.md`](./POWER_ANALYSIS_SUMMARY.md) ·
+[`POWER_MEASUREMENT_REFERENCE.md`](./POWER_MEASUREMENT_REFERENCE.md) · [`VISUALIZATION_GUIDE.md`](./VISUALIZATION_GUIDE.md).
+
+---
+
+## 📈 Sample numbers (1000-image COCO sweep)
+
+| K   |  mAP  | Power (W) | Energy (J) | Time (s) |
+| --: | :---: | :-------: | :--------: | :------: |
+|   5 | 0.362 |   15.0    |    23.0    |   1.54   |
+|  20 | 0.487 |   15.0    |    22.3    |   1.48   |
+| 100 | 0.510 |   15.0    |    28.5    |   1.90   |
+| 300 | 0.521 |   15.0    |    37.2    |   2.48   |
+
+> Going from `K=5` to `K=300` buys **+16 mAP points** for **+62 % energy** and **+61 % latency**.
+> See [`power_map_1000images_summary.csv`](./power_map_1000images_summary.csv) for the full table.
+
+---
+
+## 🚀 Quick start
+
+```bash
+# 1. Clone
+git clone https://github.com/pedro799ab-sketch/rtdetr.git
+cd rtdetr
+
+# 2. Install
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
+
+# 3. Get pretrained weights (not in repo — > 100 MB GitHub limit)
+#    Download from upstream RT-DETR releases and place at repo root:
+#    - rtdetr_r50vd_6x_coco_from_paddle.pth
+#    - rtdetrv2_r50vd_6x_coco_ema.pth
+
+# 4. Run inference on a sample image
+python main.py --device mps     # Apple Silicon
+python main.py --device cuda    # NVIDIA
+python main.py --device cpu
+```
+
+`torch` / `torchvision` compatibility:
+
+| torch | torchvision |
+| ----: | ----------: |
+|   2.4 |        0.19 |
+|   2.2 |        0.17 |
+|   2.1 |        0.16 |
+|   2.0 |        0.15 |
+
+### Or just use Docker
+
+```bash
+docker compose up --build
+```
+
+---
+
+## 🧪 Reproduce the analyses
+
+```bash
+# Power & energy as a function of K
+python tools/Val.py --num-images 50 --batch-size 10 \
+    --k-values "5,10,20,50,100,200,300"
+
+# Different power profile (limit parallelism)
+OMP_NUM_THREADS=2 python tools/Val.py --num-images 50 --batch-size 10 \
+    --k-values "5,50,100,200,300"
+
+# Power vs K under fixed time budgets (1-5 s)
+python tools/power_vs_K_time.py
+
+# Find minimum-power config that preserves mAP
+python tools/minimize_power.py
+
+# Large-scale 1000-image sweep
+bash run_1000images_analysis.sh
+
+# Regenerate all plots from CSVs
+python tools/generate_analysis_plots.py
+python generate_power_map_plots.py
+python plot_k_vs_power_map.py
+```
+
+---
+
+## 🔬 Methodology (TL;DR)
+
+Power is estimated from CPU utilization, frequency, and TDP:
+
+$$
+P = \mathrm{TDP} \cdot U_{\mathrm{CPU}} \cdot \frac{f}{f_{\max}}
+\qquad
+E = P \cdot t
+$$
+
+For each `(K, num_threads, time_budget)` configuration we record:
+`wall_time`, `cpu_time`, `cpu_util`, `power_W`, `energy_J`, `mAP`, `AP50`, `AP75`, `AR`.
+
+This yields the **(cost, accuracy)** Pareto front from *real measurements* rather than FLOPs estimates.
+Full details in [`POWER_MEASUREMENT_REFERENCE.md`](./POWER_MEASUREMENT_REFERENCE.md).
 
 ---
 
@@ -47,7 +188,7 @@ See [`ANALYSIS_SUMMARY.md`](./ANALYSIS_SUMMARY.md), [`POWER_ANALYSIS_SUMMARY.md`
 ├── tools/                    # 🔧 Custom analysis & evaluation scripts
 │   ├── Val.py                #   COCO eval with K sweep + power logging
 │   ├── Val_per5images.py     #   Per-image / per-5-images granular eval
-│   ├── val_with_ap.py        #   mAP/AP50/AP75 evaluation pipeline
+│   ├── val_with_ap.py        #   mAP / AP50 / AP75 evaluation pipeline
 │   ├── val_subset_k_analysis.py
 │   ├── minimize_power.py     #   (K, threads) Pareto search for min power
 │   ├── power_vs_K_time.py    #   Power vs K under fixed time budgets
@@ -70,109 +211,39 @@ See [`ANALYSIS_SUMMARY.md`](./ANALYSIS_SUMMARY.md), [`POWER_ANALYSIS_SUMMARY.md`
 ├── main.py                   # Quick inference demo
 ├── Dockerfile, docker-compose.yml
 ├── requirements.txt
-└── *.csv / *.md              # Experimental results + write-ups
+└── *.csv / *.md / *.png      # Results, plots and methodology write-ups
 ```
 
 ---
 
-## 🚀 Quick start
+## 🤝 Contributing
 
-### 1. Clone and install
-
-```bash
-git clone https://github.com/pedro799ab-sketch/rtdetr.git
-cd rtdetr
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-PyTorch / torchvision compatibility:
-
-| torch | torchvision |
-|---|---|
-| 2.4 | 0.19 |
-| 2.2 | 0.17 |
-| 2.1 | 0.16 |
-| 2.0 | 0.15 |
-
-### 2. Download pretrained weights
-
-The `.pth` checkpoints are **not** stored in this repo (too large). Download from the upstream RT-DETR / RT-DETRv2 releases and place them at the repo root:
-
-- `rtdetr_r50vd_6x_coco_from_paddle.pth`
-- `rtdetrv2_r50vd_6x_coco_ema.pth`
-
-See [`README_RT-DETR_upstream.md`](./README_RT-DETR_upstream.md) for the full model zoo and direct download links.
-
-### 3. Prepare the COCO dataset
-
-Place COCO 2017 under `dataset/coco/` (or symlink it). The expected layout is the standard COCO `images/` + `annotations/` directory tree referenced from `configs/dataset/coco_detection.yml`.
-
-### 4. Run a quick inference
-
-```bash
-python main.py --device mps     # Apple Silicon
-python main.py --device cuda    # NVIDIA GPU
-python main.py --device cpu
-```
-
-### 5. Reproduce the power / mAP analyses
-
-```bash
-# Power & energy as a function of K (number of decoder queries)
-python tools/Val.py --num-images 50 --batch-size 10 \
-    --k-values "5,10,20,50,100,200,300"
-
-# Limit parallelism for a different power profile
-OMP_NUM_THREADS=2 python tools/Val.py --num-images 50 --batch-size 10 \
-    --k-values "5,50,100,200,300"
-
-# Power vs K under fixed time budgets (1s..5s)
-python tools/power_vs_K_time.py
-
-# Find minimum-power configuration that preserves mAP
-python tools/minimize_power.py
-
-# Large-scale 1000-image sweep
-bash run_1000images_analysis.sh
-
-# Regenerate all plots from CSVs
-python tools/generate_analysis_plots.py
-python generate_power_map_plots.py
-python plot_k_vs_power_map.py
-```
-
-### 6. Or just run it in Docker
-
-```bash
-docker compose up --build
-```
-
----
-
-## 🔬 Methodology (TL;DR)
-
-Power is estimated from CPU utilization, frequency, and TDP:
-
-$$
-P = \text{TDP} \cdot U_{\text{CPU}} \cdot \frac{f}{f_{\max}}
-\qquad
-E = P \cdot t
-$$
-
-For each `K` (and optionally each thread count / time budget) we record:
-`wall_time`, `cpu_time`, `cpu_util`, `power_W`, `energy_J`, `mAP`, `AP50`, `AP75`, `AR`. This lets us draw the **(cost, accuracy)** Pareto front directly from real measurements rather than from FLOPs estimates.
-
-Full details: [`POWER_MEASUREMENT_REFERENCE.md`](./POWER_MEASUREMENT_REFERENCE.md).
+Bug reports, new analyses and docs improvements are very welcome — see
+[`CONTRIBUTING.md`](./CONTRIBUTING.md). Issue & PR templates are pre-filled
+under `.github/`.
 
 ---
 
 ## 📜 License & credits
 
-- My contributions (analysis pipeline, scripts under `tools/`, sweep drivers at the repo root, all `*_ANALYSIS*.md` / `*_REFERENCE*.md` / `VISUALIZATION_GUIDE.md` and result CSVs) are released under the **MIT License** — see [`LICENSE`](./LICENSE).
-- The underlying **RT-DETR / RT-DETRv2** model code in `src/`, `configs/` and `references/` is the work of Lyu Wenyu et al. and remains under its original Apache 2.0 License. Upstream repo: <https://github.com/lyuwenyu/RT-DETR>.
+- My contributions — analysis pipeline, scripts under `tools/`, sweep drivers at the repo root,
+  all `*_ANALYSIS*.md` / `*_REFERENCE*.md` / `VISUALIZATION_GUIDE.md` docs and result CSVs — are
+  released under the **MIT License** (see [`LICENSE`](./LICENSE)).
+- The underlying **RT-DETR / RT-DETRv2** model code in `src/`, `configs/` and `references/` is
+  the work of Lyu Wenyu et al. and remains under its original **Apache 2.0** license.
+  Upstream repo: <https://github.com/lyuwenyu/RT-DETR>.
 
-If you use this work, please also cite the original RT-DETR paper.
+If you use this work, please cite it (see [`CITATION.cff`](./CITATION.cff)) and the original
+RT-DETR paper:
+
+```bibtex
+@article{zhao2024detrs,
+  title   = {DETRs Beat YOLOs on Real-time Object Detection},
+  author  = {Zhao, Yian and Lv, Wenyu and others},
+  journal = {arXiv preprint arXiv:2304.08069},
+  year    = {2024}
+}
+```
 
 ---
 
@@ -180,4 +251,8 @@ If you use this work, please also cite the original RT-DETR paper.
 
 **Ahmed Badr** — building efficient computer-vision systems and energy-aware ML.
 
-If you're hiring for ML / Computer Vision / Efficient AI roles, feel free to reach out. 🙂
+> If you're hiring for ML / Computer Vision / Efficient AI roles, feel free to reach out. 🙂
+
+<div align="center">
+  <sub>⭐ If this project is useful to you, please consider giving it a star — it really helps.</sub>
+</div>
