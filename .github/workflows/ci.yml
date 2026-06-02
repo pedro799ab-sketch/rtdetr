@@ -25,14 +25,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install ruff
 
-      - name: Python syntax check (compileall)
+      - name: Python syntax check (compileall, own code only)
         run: |
-          python -m compileall -q src tools \
-            *.py || true
+          # Only lint our own code. src/ is the upstream RT-DETR codebase
+          # (Apache-2.0) and is intentionally not modified here.
+          python -m compileall -q tools *.py
 
-      - name: Ruff (style + simple bugs, non-blocking)
+      - name: Ruff (style + simple bugs, own code only)
         run: |
-          ruff check . --select=E9,F63,F7,F82 --output-format=github || true
+          ruff check tools *.py \
+            --select=E9,F63,F7,F82 \
+            --output-format=github
 
   smoke-import:
     name: Smoke import test
