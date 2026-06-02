@@ -1,0 +1,16 @@
+{
+  "name": "rtdert_container (Dockerfile)",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": ".."
+    ,
+    "platform": "linux/arm64",
+    "args": {
+      "WITH_GPU": "0"
+    }
+  },
+  "workspaceFolder": "/workspace",
+  "runArgs": ["--platform=linux/arm64"],
+  "remoteUser": "root",
+  "postCreateCommand": "echo 'Container ready'"
+}

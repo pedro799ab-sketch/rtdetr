@@ -1,0 +1,25 @@
+services:
+  tensorrt-container:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: rtdetr-v2:25.06
+    container_name: rtdetr-container
+    ports:
+      - "6126:6126" # tensorboard
+    volumes:
+      - ./:/workspace
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    shm_size: 16gb
+    runtime: nvidia
+    working_dir: /workspace
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    command: bash

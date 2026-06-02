@@ -1,0 +1,4 @@
+Target_Time_s,Num_Threads,Avg_mAP,Avg_mAP_50,Avg_Decoder_Power_W,Avg_Decoder_Time_s,Avg_CPU_Util_Pct,Mean_Time_Error_Pct,Within_Tolerance_Pct,Total_Energy_J
+1.0,10,0.0000,0.0000,14.99,1.2282,10.0,68.34,14.3,2645.40
+2.0,10,0.0000,0.0000,15.00,1.2726,10.0,62.35,0.0,4792.80
+3.0,10,0.0000,0.0000,129.03,0.7366,86.0,75.45,0.0,5982.90

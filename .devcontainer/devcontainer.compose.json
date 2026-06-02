@@ -1,0 +1,10 @@
+{
+  "name": "rtdert_container (compose)",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+    ".devcontainer/docker-compose.mac.yml"
+  ],
+  "service": "tensorrt-container",
+  "workspaceFolder": "/workspace",
+  "runArgs": ["--platform=linux/amd64"]
+}

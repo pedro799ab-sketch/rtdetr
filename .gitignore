@@ -1,0 +1,81 @@
+# ============================================================
+# Python
+# ============================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ============================================================
+# Jupyter / IDE
+# ============================================================
+.ipynb_checkpoints/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ============================================================
+# OS
+# ============================================================
+.DS_Store
+Thumbs.db
+
+# ============================================================
+# Project specific - large / regeneratable assets
+# ============================================================
+
+# Datasets (download separately, see README)
+dataset/coco/
+dataset/**/images/
+dataset/**/annotations/
+dataset/**/*.zip
+dataset/**/*.tar*
+
+# Trained / pretrained model weights
+*.pth
+*.pt
+*.onnx
+*.engine
+*.trt
+*.bin
+*.safetensors
+
+# Outputs / experiment artifacts
+output/
+runs/
+logs/
+wandb/
+mlruns/
+
+# Generated plots (keep a few in docs/ if you want to showcase)
+# *.png
+# *.jpg
+
+# Large CSVs from sweeps (keep summary CSVs)
+power_map_1000images_results.csv
+sweep_results.csv
+
+# Misc
+valentine_game.html
+docker_debug.sh
+lunch_model.sh
+monitor_progress.sh

@@ -1,0 +1,374 @@
+NOTE! Installing ujson may make loading annotations faster.
+
+[INFO] Device: cpu
+[INFO] Number of images: 5
+[ProcessCPUMonitor] TDP/core=15.0W, Cores=10, TDP_total=150.0W
+Loading annotations into memory...
+Done (t=0.16s)
+Creating index...
+index created!
+[INFO] Loaded 5 images in 1 batches (batch_size=5)
+[INFO] K values to test: [5, 10, 15, 20, 25, 30, 40, 50, 100, 200, 300, 500, 1000, 1500]
+[INFO] Core configurations to test: [1, 2, 3, 4, 6, 8, 10]
+
+================================================================================
+POWER MINIMIZATION: Testing 7 core configurations
+================================================================================
+
+
+[Testing 1/10 threads]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 1 threads...]
+    Encoder: Time=7.2119s, Power=15.02W
+    [Processing 14 K values...]
+
+    K=5:
+      K=   5: Power=14.91W, Time=0.6438s, CPU=9.9%
+
+    K=10:
+
+    K=15:
+
+    K=20:
+
+    K=25:
+
+    K=30:
+
+    K=40:
+
+    K=50:
+
+    K=100:
+      K= 100: Power=14.97W, Time=0.7514s, CPU=10.0%
+
+    K=200:
+      K= 200: Power=15.07W, Time=0.8961s, CPU=10.0%
+
+    K=300:
+      K= 300: Power=15.00W, Time=1.0700s, CPU=10.0%
+
+    K=500:
+      K= 500: Power=15.00W, Time=1.4503s, CPU=10.0%
+
+    K=1000:
+      K=1000: Power=15.00W, Time=2.7399s, CPU=10.0%
+
+    K=1500:
+      K=1500: Power=14.98W, Time=4.3363s, CPU=10.0%
+
+    [Note: mAP calculation requires DeployModel with postprocessor]
+    [The model output format doesn't match COCO requirements without postprocessing]
+    [Power/Energy measurements are accurate. mAP returns 0 due to format incompatibility.]
+
+  [Summary for 1 threads]
+    Average Decoder Power: 14.97W
+    Average Decoder Time:  1.1718s
+    Average CPU Utilization: 10.0%
+    Total Energy:  1761.90J
+    Total Time:    117.37s
+
+[Testing 2/10 threads]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 2 threads...]
+    Encoder: Time=4.2470s, Power=25.78W
+    [Processing 14 K values...]
+
+    K=5:
+      K=   5: Power=29.23W, Time=0.3284s, CPU=19.5%
+
+    K=10:
+
+    K=15:
+
+    K=20:
+
+    K=25:
+
+    K=30:
+
+    K=40:
+
+    K=50:
+
+    K=100:
+      K= 100: Power=29.48W, Time=0.4020s, CPU=19.7%
+
+    K=200:
+      K= 200: Power=29.26W, Time=0.4819s, CPU=19.5%
+
+    K=300:
+      K= 300: Power=29.72W, Time=0.5754s, CPU=19.8%
+
+    K=500:
+      K= 500: Power=29.63W, Time=0.7797s, CPU=19.8%
+
+    K=1000:
+      K=1000: Power=29.78W, Time=1.4356s, CPU=19.9%
+
+    K=1500:
+      K=1500: Power=29.69W, Time=2.4556s, CPU=19.8%
+
+    [Note: mAP calculation requires DeployModel with postprocessor]
+    [The model output format doesn't match COCO requirements without postprocessing]
+    [Power/Energy measurements are accurate. mAP returns 0 due to format incompatibility.]
+
+  [Summary for 2 threads]
+    Average Decoder Power: 29.11W
+    Average Decoder Time:  0.6366s
+    Average CPU Utilization: 19.4%
+    Total Energy:  1794.75J
+    Total Time:    68.37s
+
+[Testing 3/10 threads]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 3 threads...]
+    Encoder: Time=3.0532s, Power=38.27W
+    [Processing 14 K values...]
+
+    K=5:
+      K=   5: Power=43.96W, Time=0.2525s, CPU=29.3%
+
+    K=10:
+
+    K=15:
+
+    K=20:
+
+    K=25:
+
+    K=30:
+
+    K=40:
+
+    K=50:
+
+    K=100:
+      K= 100: Power=42.74W, Time=0.3334s, CPU=28.5%
+
+    K=200:
+      K= 200: Power=42.32W, Time=0.5282s, CPU=28.2%
+
+    K=300:
+      K= 300: Power=43.91W, Time=0.4441s, CPU=29.3%
+
+    K=500:
+      K= 500: Power=43.75W, Time=0.6411s, CPU=29.2%
+
+    K=1000:
+      K=1000: Power=38.65W, Time=2.2860s, CPU=25.8%
+
+    K=1500:
+      K=1500: Power=43.87W, Time=1.9352s, CPU=29.2%
+
+    [Note: mAP calculation requires DeployModel with postprocessor]
+    [The model output format doesn't match COCO requirements without postprocessing]
+    [Power/Energy measurements are accurate. mAP returns 0 due to format incompatibility.]
+
+  [Summary for 3 threads]
+    Average Decoder Power: 42.50W
+    Average Decoder Time:  0.5933s
+    Average CPU Utilization: 28.3%
+    Total Energy:  1984.05J
+    Total Time:    51.05s
+
+[Testing 4/10 threads]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 4 threads...]
+    Encoder: Time=4.5644s, Power=37.33W
+    [Processing 14 K values...]
+
+    K=5:
+      K=   5: Power=56.77W, Time=0.2246s, CPU=37.8%
+
+    K=10:
+
+    K=15:
+
+    K=20:
+
+    K=25:
+
+    K=30:
+
+    K=40:
+
+    K=50:
+
+    K=100:
+      K= 100: Power=54.51W, Time=0.2724s, CPU=36.3%
+
+    K=200:
+      K= 200: Power=58.12W, Time=0.3123s, CPU=38.7%
+
+    K=300:
+      K= 300: Power=57.01W, Time=0.3868s, CPU=38.0%
+
+    K=500:
+      K= 500: Power=57.93W, Time=0.5670s, CPU=38.6%
+
+    K=1000:
+      K=1000: Power=57.90W, Time=1.0389s, CPU=38.6%
+
+    K=1500:
+      K=1500: Power=53.04W, Time=2.8028s, CPU=35.4%
+
+    [Note: mAP calculation requires DeployModel with postprocessor]
+    [The model output format doesn't match COCO requirements without postprocessing]
+    [Power/Energy measurements are accurate. mAP returns 0 due to format incompatibility.]
+
+  [Summary for 4 threads]
+    Average Decoder Power: 55.30W
+    Average Decoder Time:  0.5251s
+    Average CPU Utilization: 36.9%
+    Total Energy:  2789.55J
+    Total Time:    71.25s
+
+[Testing 6/10 threads]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 6 threads...]
+    Encoder: Time=2.4896s, Power=67.36W
+    [Processing 14 K values...]
+
+    K=5:
+      K=   5: Power=84.19W, Time=0.2940s, CPU=56.1%
+
+    K=10:
+
+    K=15:
+
+    K=20:
+
+    K=25:
+
+    K=30:
+
+    K=40:
+
+    K=50:
+
+    K=100:
+      K= 100: Power=80.69W, Time=0.3811s, CPU=53.8%
+
+    K=200:
+      K= 200: Power=83.45W, Time=0.4026s, CPU=55.6%
+
+    K=300:
+      K= 300: Power=84.84W, Time=0.4703s, CPU=56.6%
+
+    K=500:
+      K= 500: Power=83.91W, Time=0.6525s, CPU=55.9%
+
+    K=1000:
+      K=1000: Power=83.41W, Time=1.2085s, CPU=55.6%
+
+    K=1500:
+      K=1500: Power=79.45W, Time=2.1901s, CPU=53.0%
+
+    [Note: mAP calculation requires DeployModel with postprocessor]
+    [The model output format doesn't match COCO requirements without postprocessing]
+    [Power/Energy measurements are accurate. mAP returns 0 due to format incompatibility.]
+
+  [Summary for 6 threads]
+    Average Decoder Power: 81.37W
+    Average Decoder Time:  0.5844s
+    Average CPU Utilization: 54.2%
+    Total Energy:  3012.00J
+    Total Time:    43.04s
+
+[Testing 8/10 threads]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 8 threads...]
+    Encoder: Time=2.4968s, Power=70.53W
+    [Processing 14 K values...]
+
+    K=5:
+      K=   5: Power=108.42W, Time=0.2380s, CPU=72.3%
+
+    K=10:
+
+    K=15:
+
+    K=20:
+
+    K=25:
+
+    K=30:
+
+    K=40:
+
+    K=50:
+
+    K=100:
+      K= 100: Power=102.76W, Time=0.3051s, CPU=68.5%
+
+    K=200:
+      K= 200: Power=107.27W, Time=0.3454s, CPU=71.5%
+
+    K=300:
+      K= 300: Power=108.71W, Time=0.3974s, CPU=72.5%
+
+    K=500:
+      K= 500: Power=112.38W, Time=0.5085s, CPU=74.9%
+
+    K=1000:
+      K=1000: Power=112.48W, Time=0.9789s, CPU=75.0%
+
+    K=1500:
+      K=1500: Power=110.71W, Time=1.5501s, CPU=73.8%
+
+    [Note: mAP calculation requires DeployModel with postprocessor]
+    [The model output format doesn't match COCO requirements without postprocessing]
+    [Power/Energy measurements are accurate. mAP returns 0 due to format incompatibility.]
+
+  [Summary for 8 threads]
+    Average Decoder Power: 106.35W
+    Average Decoder Time:  0.4413s
+    Average CPU Utilization: 70.9%
+    Total Energy:  3133.80J
+    Total Time:    41.13s
+
+[Testing 10/10 threads]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 10 threads...]
+    Encoder: Time=2.4666s, Power=71.70W
+    [Processing 14 K values...]
+
+    K=5:
+      K=   5: Power=132.41W, Time=0.2266s, CPU=88.3%
+
+    K=10:
+
+    K=15:
+
+    K=20:
+
+    K=25:
+
+    K=30:
+
+    K=40:
+
+    K=50:
+
+    K=100:
+      K= 100: Power=124.09W, Time=0.2877s, CPU=82.7%
+
+    K=200:
+      K= 200: Power=128.65W, Time=0.3393s, CPU=85.8%
+
+    K=300:
+      K= 300: Power=130.11W, Time=0.3770s, CPU=86.7%
+
+    K=500:
+      K= 500: Power=133.39W, Time=0.4892s, CPU=88.9%
+
+    K=1000:
+      K=1000: Power=137.03W, Time=0.9009s, CPU=91.4%

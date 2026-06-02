@@ -1,0 +1,275 @@
+NOTE! Installing ujson may make loading annotations faster.
+
+[INFO] Device: cpu
+[INFO] Number of images: 5
+[ProcessCPUMonitor] TDP/core=15.0W, Cores=10, TDP_total=150.0W
+Loading annotations into memory...
+Done (t=0.00s)
+Creating index...
+index created!
+[INFO] Loaded 5 images in 1 batches (batch_size=5)
+[INFO] K values to test: [5, 10, 15, 20, 25, 30, 40, 50, 100, 200, 300, 500, 1000, 1500]
+[INFO] CALIBRATION MODE: Target times = [1.0, 2.0, 3.0]s, Tolerance = ±10%
+
+================================================================================
+CALIBRATED POWER MEASUREMENT: Target Time = 1.0s
+================================================================================
+
+
+[Calibrating threads for target time 1.0s]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 10 threads...]
+    Encoder: Time=2.2862s, Power=74.01W
+    [Processing 14 K values with calibration...]
+
+    [Calibrating thread count for target time 1.0s using first K value...]
+      [Calibrating for target time 1.00s...]
+        1 threads → 1.0782s (error: 7.8%)
+        3 threads → 0.4084s (error: 59.2%)
+        5 threads → 0.5359s (error: 46.4%)
+        10 threads → 0.4271s (error: 57.3%)
+        ✓ Calibrated: 1 threads achieve 1.0782s (within ±10%)
+    [Fixed thread count to 1 for all K values]
+
+    K=5:
+      K=   5: Power=15.04W, Time=0.6083s (target=1.00s, error=39.2%), CPU=10.0%, 1/10 threads
+
+    K=10:
+
+    K=15:
+
+    K=20:
+
+    K=25:
+
+    K=30:
+
+    K=40:
+
+    K=50:
+
+    K=100:
+      K= 100: Power=15.03W, Time=0.7685s (target=1.00s, error=23.1%), CPU=10.0%, 1/10 threads
+
+    K=200:
+      K= 200: Power=14.92W, Time=0.9049s (target=1.00s, error=9.5%), CPU=9.9%, 1/10 threads
+
+    K=300:
+      K= 300: Power=15.12W, Time=1.0717s (target=1.00s, error=7.2%), CPU=10.1%, 1/10 threads
+
+    K=500:
+      K= 500: Power=15.00W, Time=1.4603s (target=1.00s, error=46.0%), CPU=10.0%, 1/10 threads
+
+    K=1000:
+      K=1000: Power=15.03W, Time=2.7152s (target=1.00s, error=171.5%), CPU=10.0%, 1/10 threads
+
+    K=1500:
+      K=1500: Power=15.01W, Time=4.3668s (target=1.00s, error=336.7%), CPU=10.0%, 1/10 threads
+
+    [Calculating mAP across all K values...]
+      K=   5: mAP=0.0000, mAP@50=0.0000
+      K=  10: mAP=0.0000, mAP@50=0.0000
+      K=  15: mAP=0.0000, mAP@50=0.0000
+      K=  20: mAP=0.0000, mAP@50=0.0000
+      K=  25: mAP=0.0000, mAP@50=0.0000
+      K=  30: mAP=0.0000, mAP@50=0.0000
+      K=  40: mAP=0.0000, mAP@50=0.0000
+      K=  50: mAP=0.0000, mAP@50=0.0000
+      K= 100: mAP=0.0000, mAP@50=0.0000
+      K= 200: mAP=0.0000, mAP@50=0.0000
+      K= 300: mAP=0.0000, mAP@50=0.0000
+      K= 500: mAP=0.0000, mAP@50=0.0000
+      K=1000: mAP=0.0000, mAP@50=0.0000
+      K=1500: mAP=0.0000, mAP@50=0.0000
+
+  [Summary for 10 threads, target=1.0s]
+    Average Decoder Power: 14.99W
+    Average Decoder Time:  1.1698s
+    Average CPU Utilization: 10.0%
+    Total Energy:  2614.50J
+    Total Time:    48.38s
+
+================================================================================
+CALIBRATED POWER MEASUREMENT: Target Time = 2.0s
+================================================================================
+
+
+[Calibrating threads for target time 2.0s]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 10 threads...]
+    Encoder: Time=2.3347s, Power=74.01W
+    [Processing 14 K values with calibration...]
+
+    [Calibrating thread count for target time 2.0s using first K value...]
+      [Calibrating for target time 2.00s...]
+        1 threads → 1.0812s (error: 45.9%)
+        3 threads → 0.4112s (error: 79.4%)
+        5 threads → 0.5413s (error: 72.9%)
+        10 threads → 0.4354s (error: 78.2%)
+        → Using best: 1 threads → 1.0812s (error: 45.9%)
+    [Fixed thread count to 1 for all K values]
+
+    K=5:
+      K=   5: Power=14.80W, Time=0.6081s (target=2.00s, error=69.6%), CPU=9.9%, 1/10 threads
+
+    K=10:
+
+    K=15:
+
+    K=20:
+
+    K=25:
+
+    K=30:
+
+    K=40:
+
+    K=50:
+
+    K=100:
+      K= 100: Power=14.88W, Time=0.7461s (target=2.00s, error=62.7%), CPU=9.9%, 1/10 threads
+
+    K=200:
+      K= 200: Power=14.93W, Time=0.9042s (target=2.00s, error=54.8%), CPU=10.0%, 1/10 threads
+
+    K=300:
+      K= 300: Power=15.02W, Time=1.0788s (target=2.00s, error=46.1%), CPU=10.0%, 1/10 threads
+
+    K=500:
+      K= 500: Power=14.99W, Time=1.4706s (target=2.00s, error=26.5%), CPU=10.0%, 1/10 threads
+
+    K=1000:
+      K=1000: Power=14.98W, Time=2.7341s (target=2.00s, error=36.7%), CPU=10.0%, 1/10 threads
+
+    K=1500:
+      K=1500: Power=15.02W, Time=4.4049s (target=2.00s, error=120.2%), CPU=10.0%, 1/10 threads
+
+    [Calculating mAP across all K values...]
+      K=   5: mAP=0.0000, mAP@50=0.0000
+      K=  10: mAP=0.0000, mAP@50=0.0000
+      K=  15: mAP=0.0000, mAP@50=0.0000
+      K=  20: mAP=0.0000, mAP@50=0.0000
+      K=  25: mAP=0.0000, mAP@50=0.0000
+      K=  30: mAP=0.0000, mAP@50=0.0000
+      K=  40: mAP=0.0000, mAP@50=0.0000
+      K=  50: mAP=0.0000, mAP@50=0.0000
+      K= 100: mAP=0.0000, mAP@50=0.0000
+      K= 200: mAP=0.0000, mAP@50=0.0000
+      K= 300: mAP=0.0000, mAP@50=0.0000
+      K= 500: mAP=0.0000, mAP@50=0.0000
+      K=1000: mAP=0.0000, mAP@50=0.0000
+      K=1500: mAP=0.0000, mAP@50=0.0000
+
+  [Summary for 10 threads, target=2.0s]
+    Average Decoder Power: 14.95W
+    Average Decoder Time:  1.1756s
+    Average CPU Utilization: 10.0%
+    Total Energy:  2665.65J
+    Total Time:    49.14s
+
+================================================================================
+CALIBRATED POWER MEASUREMENT: Target Time = 3.0s
+================================================================================
+
+
+[Calibrating threads for target time 3.0s]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 10 threads...]
+    Encoder: Time=2.4291s, Power=73.98W
+    [Processing 14 K values with calibration...]
+
+    [Calibrating thread count for target time 3.0s using first K value...]
+      [Calibrating for target time 3.00s...]
+        1 threads → 1.0738s (error: 64.2%)
+        3 threads → 0.4090s (error: 86.4%)
+        5 threads → 0.5225s (error: 82.6%)
+        10 threads → 0.3919s (error: 86.9%)
+        → Using best: 1 threads → 1.0738s (error: 64.2%)
+    [Fixed thread count to 1 for all K values]
+
+    K=5:
+      K=   5: Power=14.91W, Time=0.6037s (target=3.00s, error=79.9%), CPU=9.9%, 1/10 threads
+
+    K=10:
+
+    K=15:
+
+    K=20:
+
+    K=25:
+
+    K=30:
+
+    K=40:
+
+    K=50:
+
+    K=100:
+      K= 100: Power=14.84W, Time=0.7479s (target=3.00s, error=75.1%), CPU=9.9%, 1/10 threads
+
+    K=200:
+      K= 200: Power=15.10W, Time=0.9040s (target=3.00s, error=69.9%), CPU=10.1%, 1/10 threads
+
+    K=300:
+      K= 300: Power=15.04W, Time=1.0772s (target=3.00s, error=64.1%), CPU=10.0%, 1/10 threads
+
+    K=500:
+      K= 500: Power=15.02W, Time=1.4678s (target=3.00s, error=51.1%), CPU=10.0%, 1/10 threads
+
+    K=1000:
+      K=1000: Power=15.05W, Time=2.7317s (target=3.00s, error=8.9%), CPU=10.0%, 1/10 threads
+
+    K=1500:
+      K=1500: Power=15.00W, Time=4.3806s (target=3.00s, error=46.0%), CPU=10.0%, 1/10 threads
+
+    [Calculating mAP across all K values...]
+      K=   5: mAP=0.0000, mAP@50=0.0000
+      K=  10: mAP=0.0000, mAP@50=0.0000
+      K=  15: mAP=0.0000, mAP@50=0.0000
+      K=  20: mAP=0.0000, mAP@50=0.0000
+      K=  25: mAP=0.0000, mAP@50=0.0000
+      K=  30: mAP=0.0000, mAP@50=0.0000
+      K=  40: mAP=0.0000, mAP@50=0.0000
+      K=  50: mAP=0.0000, mAP@50=0.0000
+      K= 100: mAP=0.0000, mAP@50=0.0000
+      K= 200: mAP=0.0000, mAP@50=0.0000
+      K= 300: mAP=0.0000, mAP@50=0.0000
+      K= 500: mAP=0.0000, mAP@50=0.0000
+      K=1000: mAP=0.0000, mAP@50=0.0000
+      K=1500: mAP=0.0000, mAP@50=0.0000
+
+  [Summary for 10 threads, target=3.0s]
+    Average Decoder Power: 14.98W
+    Average Decoder Time:  1.1696s
+    Average CPU Utilization: 10.0%
+    Total Energy:  2761.35J
+    Total Time:    50.38s
+
+================================================================================
+OPTIMIZATION RESULTS
+================================================================================
+
+ Target Time |  Threads | Avg Dec Power (W) | Avg Dec Time (s) |  Avg CPU % |  Mean Time Err % |  Within Tol %
+-------------------------------------------------------------------------------------------------------------------
+         2.0 |       10 |             14.95 |           1.1756 |       10.0 |             63.6 |           0.0
+         3.0 |       10 |             14.98 |           1.1696 |       10.0 |             67.6 |           7.1
+         1.0 |       10 |             14.99 |           1.1698 |       10.0 |             63.2 |          14.3
+
+[OPTIMAL] 10 threads → Avg Decoder Power: 14.95W, Avg CPU: 10.0%
+          Mean Time Error: 63.6%, Within Tolerance: 0.0%
+
+[INFO] Detailed results saved to: power_minimization_results.csv
+[INFO] Summary saved to: power_minimization_summary.csv
+
+[INFO] Generating visualizations...
+[INFO] Visualization saved to: power_minimization_target_1.0s.png
+[INFO] Visualization saved to: power_minimization_target_2.0s.png
+[INFO] Visualization saved to: power_minimization_target_3.0s.png
+
+================================================================================
+COMPLETE! Check generated plots and CSV files.
+================================================================================
+

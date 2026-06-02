@@ -1,0 +1,85 @@
+NOTE! Installing ujson may make loading annotations faster.
+
+[INFO] Device: cpu
+[INFO] Number of images: 5
+[ProcessCPUMonitor] TDP/core=15.0W, Cores=10, TDP_total=150.0W
+Loading annotations into memory...
+Done (t=0.00s)
+Creating index...
+index created!
+[INFO] Loaded 5 images in 1 batches (batch_size=5)
+[INFO] K values to test: [5, 10, 15, 20, 25, 30, 40, 50, 100, 200, 300, 500, 1000, 1500]
+[INFO] CALIBRATION MODE: Target times = [1.0, 2.0, 3.0]s, Tolerance = ±10%
+
+================================================================================
+CALIBRATED POWER MEASUREMENT: Target Time = 1.0s
+================================================================================
+
+
+[Calibrating threads for target time 1.0s]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 10 threads...]
+    Encoder: Time=2.3737s, Power=75.14W
+    [Processing 14 K values with calibration...]
+
+    [Calibrating thread count for target time 1.0s using first K value...]
+      [Calibrating for target time 1.00s...]
+        1 threads → 1.0857s (error: 8.6%)
+        3 threads → 0.4109s (error: 58.9%)
+        5 threads → 0.6117s (error: 38.8%)
+        10 threads → 0.4345s (error: 56.5%)
+        ✓ Calibrated: 1 threads achieve 1.0857s (within ±10%)
+    [Fixed thread count to 1 for all K values]
+
+    K=5:
+      K=   5: Power=14.98W, Time=1.0813s (target=1.00s, error=8.1%), CPU=10.0%, 1/10 threads
+
+    K=10:
+
+    K=15:
+
+    K=20:
+
+    K=25:
+
+    K=30:
+
+    K=40:
+
+    K=50:
+
+    K=100:
+      K= 100: Power=15.00W, Time=1.0898s (target=1.00s, error=9.0%), CPU=10.0%, 1/10 threads
+
+    K=200:
+      K= 200: Power=15.05W, Time=1.1260s (target=1.00s, error=12.6%), CPU=10.0%, 1/10 threads
+
+    K=300:
+      K= 300: Power=15.09W, Time=1.0937s (target=1.00s, error=9.4%), CPU=10.1%, 1/10 threads
+
+    K=500:
+      K= 500: Power=15.01W, Time=1.0894s (target=1.00s, error=8.9%), CPU=10.0%, 1/10 threads
+
+    K=1000:
+      K=1000: Power=14.95W, Time=1.0834s (target=1.00s, error=8.3%), CPU=10.0%, 1/10 threads
+
+    K=1500:
+      K=1500: Power=15.03W, Time=1.0876s (target=1.00s, error=8.8%), CPU=10.0%, 1/10 threads
+
+  [Summary for 10 threads, target=1.0s]
+    Average Decoder Power: 15.00W
+    Average Decoder Time:  1.0872s
+    Average CPU Utilization: 10.0%
+    Total Energy:  2725.20J
+    Total Time:    48.45s
+
+================================================================================
+CALIBRATED POWER MEASUREMENT: Target Time = 2.0s
+================================================================================
+
+
+[Calibrating threads for target time 2.0s]
+--------------------------------------------------------------------------------
+Load PResNet50 state_dict
+    [Warm-up with 10 threads...]

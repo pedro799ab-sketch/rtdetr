@@ -1,0 +1,4 @@
+K,Encoder_Time_s,Encoder_Power_W,Encoder_Energy_J,Decoder_Time_s,Decoder_Power_W,Decoder_Energy_J,Num_Images
+5,3.9844,120.06,478.35,1.2592,15.01,18.90,10
+100,3.9844,120.06,478.35,0.6383,44.18,28.20,10
+300,3.9844,120.06,478.35,1.2980,136.82,177.59,10
