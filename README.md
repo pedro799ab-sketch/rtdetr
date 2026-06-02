@@ -80,8 +80,8 @@ See [`ANALYSIS_SUMMARY.md`](./ANALYSIS_SUMMARY.md), [`POWER_ANALYSIS_SUMMARY.md`
 ### 1. Clone and install
 
 ```bash
-git clone https://github.com/<your-username>/rtdetr-power-analysis.git
-cd rtdetr-power-analysis
+git clone https://github.com/pedro799ab-sketch/rtdetr.git
+cd rtdetr
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 ```
